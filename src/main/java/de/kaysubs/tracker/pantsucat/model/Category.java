@@ -18,7 +18,7 @@ public interface Category {
     }
 
     enum Software implements Category {
-        Applications(1), Games(2);
+        APPLICATIONS(1), GAMES(2);
         private final int subId;
 
         Software(int subId) {
@@ -37,7 +37,7 @@ public interface Category {
     }
 
     enum Audio implements Category {
-        Lossless(3), Lossy(2);
+        LOSSLESS(3), LOSSY(2);
         private final int subId;
 
         Audio(int subId) {
@@ -56,7 +56,7 @@ public interface Category {
     }
 
     enum Anime implements Category {
-        Music(12), English(5), NonEnglish(13), Raw(6);
+        MUSIC(12), ENGLISH(5), NON_ENGLISH(13), RAW(6);
         private final int subId;
 
         Anime(int subId) {
@@ -75,7 +75,7 @@ public interface Category {
     }
 
     enum Literature implements Category {
-        English(7), NonEnglish(14), Raw(8);
+        ENGLISH(7), NON_ENGLISH(14), RAW(8);
         private final int subId;
 
         Literature(int subId) {
@@ -94,7 +94,7 @@ public interface Category {
     }
 
     enum LiveAction implements Category {
-        English(9), Idol(10), NonEnglish(18), Raw(11);
+        ENGLISH(9), IDOL(10), NON_ENGLISH(18), RAW(11);
         private final int subId;
 
         LiveAction(int subId) {
@@ -113,7 +113,7 @@ public interface Category {
     }
 
     enum Pictures implements Category {
-        Graphics(15), Photos(16);
+        GRAPHICS(15), PICTURES(16);
         private final int subId;
 
         Pictures(int subId) {

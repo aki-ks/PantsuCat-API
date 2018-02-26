@@ -4,7 +4,6 @@ import de.kaysubs.tracker.pantsucat.PantsuCatApi;
 import de.kaysubs.tracker.pantsucat.model.*;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TorrentManagementExamples {
@@ -36,7 +35,7 @@ public class TorrentManagementExamples {
                 .setApiKey(apiKey)
                 .setName("API Example Torrent")
                 .setDescription("This Torrent has been uploaded via 'k subs pantsu.cat api.")
-                .setCategory(Category.Anime.NonEnglish)
+                .setCategory(Category.Anime.NON_ENGLISH)
                 .setRemake(false)
                 .setAnonymous(true)
                 .setWebsite("http://example.com/")
@@ -57,7 +56,7 @@ public class TorrentManagementExamples {
 
                 .setName("Edited API Example Torrent")
                 .setDescription("This Torrent has been uploaded and edited via 'k subs pantsu.cat api.")
-                .setCategory(Category.Literature.NonEnglish)
+                .setCategory(Category.Literature.NON_ENGLISH)
                 .setRemake(true)
                 .setAnonymous(false)
                 .setWebsite("http://edited-example.com/")
