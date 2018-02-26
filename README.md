@@ -1,15 +1,16 @@
 # PantsuCat-API
 Java API implementation for https://pantsu.cat/
 
-# Usage
-You can either compile this library from source or let sbt do that for you.
-
-Include this repository as a project in your build.sbt and let your projects depend on it:
+# Installation
+The recommended way to use this library is to add the github repository as a project in your build.sbt and let your project depend on it.
+Sbt builds the library from source and will apply all updates in the repository.
 ``` sbt
 lazy val pantsuCat = RootProject(uri("https://github.com/kaysubs/PantsuCat-API.git"))
 dependsOn(pantsuCat)
 ```
+Of course you may also use a different build tool that support that feature or manually compile this library and its dependencies.
 
+# Usage
 The entry point of this API is the `PantsuCatApi` interface.
 
 Here's an example usage:
