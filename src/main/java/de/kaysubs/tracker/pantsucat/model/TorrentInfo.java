@@ -193,6 +193,7 @@ public class TorrentInfo {
 
     public Language[] getLanguages() {
         return Arrays.stream(this.languages)
+                .filter(l -> !l.isEmpty())
                 .map(Language::forId)
                 .toArray(Language[]::new);
     }
