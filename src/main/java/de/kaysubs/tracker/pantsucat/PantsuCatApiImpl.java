@@ -62,7 +62,7 @@ public class PantsuCatApiImpl implements PantsuCatApi {
 
             query.getCategories().ifPresent(categories -> {
                 String categoryQuery = Arrays.stream(categories)
-                        .map(c -> c.getId())
+                        .map(c -> c.getSearchId())
                         .collect(Collectors.joining(","));
 
                 builder.addParameter("c", categoryQuery);
@@ -175,7 +175,7 @@ public class PantsuCatApiImpl implements PantsuCatApi {
                 builder.addTextBody("name", name));
 
         request.getCategory().ifPresent(category ->
-                builder.addTextBody("c", category.getId()));
+                builder.addTextBody("c", category.getSearchId()));
 
         request.getDescription().ifPresent(description ->
                 // The API documentation claims that
@@ -241,7 +241,7 @@ public class PantsuCatApiImpl implements PantsuCatApi {
                 builder.addTextBody("name", name));
 
         request.getCategory().ifPresent(category ->
-                builder.addTextBody("c", category.getId()));
+                builder.addTextBody("c", category.getSearchId()));
 
         request.getDescription().ifPresent(description ->
                 // The API documentation claims that

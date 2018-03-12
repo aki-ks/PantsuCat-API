@@ -35,7 +35,7 @@ public class TorrentManagementExamples {
                 .setApiKey(apiKey)
                 .setName("API Example Torrent")
                 .setDescription("This Torrent has been uploaded via 'k subs pantsu.cat api.")
-                .setCategory(Category.Anime.NON_ENGLISH)
+                .setCategory(Category.anime.nonEnglish)
                 .setRemake(false)
                 .setAnonymous(true)
                 .setWebsite("http://example.com/")
@@ -56,7 +56,7 @@ public class TorrentManagementExamples {
 
                 .setName("Edited API Example Torrent")
                 .setDescription("This Torrent has been uploaded and edited via 'k subs pantsu.cat api.")
-                .setCategory(Category.Literature.NON_ENGLISH)
+                .setCategory(Category.literature.nonEnglish)
                 .setRemake(true)
                 .setAnonymous(false)
                 .setWebsite("http://edited-example.com/")

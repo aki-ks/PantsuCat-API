@@ -146,7 +146,7 @@ public class TorrentInfo {
         return comments;
     }
 
-    public Category getCategory() {
+    public SubCategory getCategory() {
         int mainCategory = Integer.parseInt(this.category);
         int subCategory = Integer.parseInt(this.sub_category);
         return Category.fromId(mainCategory, subCategory);

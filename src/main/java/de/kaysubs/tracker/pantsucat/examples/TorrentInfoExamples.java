@@ -20,7 +20,7 @@ public class TorrentInfoExamples {
         System.out.println("name: " + info.getName());
         System.out.println("description:\n" + info.getDescription());
         System.out.println("uploader: " + info.getUploaderName() + " (https://pantsu.cat/user/"+info.getUploaderId()+")");
-        System.out.println("category: " + info.getCategory().getMainCategory().name() + "." + info.getCategory().name());
+        System.out.println("category: " + info.getCategory().getMainCategory().getName() + "." + info.getCategory().getName());
         System.out.println("hash: " + info.getHash());
         System.out.println("language: " + Arrays.toString(info.getLanguages()));
         System.out.println("size: " + info.getFilesize());

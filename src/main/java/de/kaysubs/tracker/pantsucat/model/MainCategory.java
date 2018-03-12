@@ -1,42 +1,51 @@
 package de.kaysubs.tracker.pantsucat.model;
 
-public enum MainCategory {
-    SOFTWARE(1, Category.Software.values()),
-    AUDIO(2, Category.Audio.values()),
-    ANIME(3, Category.Anime.values()),
-    LITERATURE(4, Category.Literature.values()),
-    LIVEACTION(5, Category.LiveAction.values()),
-    PICTURES(6, Category.Pictures.values());
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
+
+public abstract class MainCategory implements Category {
 
     private final int id;
-    private final Category[] subCategories;
+    private final String name;
+    private SubCategory[] subCategories;
 
-    MainCategory(int id, Category[] subCategories) {
+    public MainCategory(int id, String name) {
         this.id = id;
-        this.subCategories = subCategories;
+        this.name = name;
     }
 
     public int getId() {
         return id;
     }
 
-    public Category[] getSubCategories() {
+    public String getName() {
+        return name;
+    }
+
+    public SubCategory[] getSubCategories() {
+        if(subCategories == null) {
+            subCategories = Arrays.stream(getClass().getDeclaredFields())
+                    .filter(field -> SubCategory.class.isAssignableFrom(field.getType()))
+                    .map(field -> {
+                        try {
+                            return (SubCategory) field.get(this);
+                        } catch (IllegalAccessException e) {
+                            throw new IllegalStateException("This should never happen. All fields are public.", e);
+                        }
+                    }).toArray(SubCategory[]::new);
+        }
+
         return subCategories;
     }
 
-    public static MainCategory fromId(int id) {
-        for(MainCategory c : values())
-            if(c.id == id)
-                return c;
-
-        throw new IllegalArgumentException("No MainCategory with id " + id);
+    public String getSearchId() {
+        return getId() + "_";
     }
 
-    public Category subcategoryFromId(int subcategoryId) {
-        for(Category c : getSubCategories())
-            if(c.getSubCategoryId() == subcategoryId)
-                return c;
-
-        throw new IllegalArgumentException("No subcategory with id " + subcategoryId);
+    public SubCategory getSubcategoryFromId(int subcategoryId) {
+        return Arrays.stream(getSubCategories())
+                .filter(c -> c.getId() == subcategoryId).findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("No subcategory with id " + subcategoryId));
     }
 }

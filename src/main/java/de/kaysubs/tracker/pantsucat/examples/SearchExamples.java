@@ -69,10 +69,12 @@ public class SearchExamples {
     }
 
     public static void searchByCategory() {
-        api.search(new SearchRequest().setCategories(Category.Anime.RAW));
+        api.search(new SearchRequest().setCategories(Category.anime));
+
+        api.search(new SearchRequest().setCategories(Category.anime.raw));
 
         // Search for english or non-english translated animes
-        api.search(new SearchRequest().setCategories(Category.Anime.ENGLISH, Category.Anime.NON_ENGLISH));
+        api.search(new SearchRequest().setCategories(Category.anime.english, Category.anime.nonEnglish));
     }
 
 }
