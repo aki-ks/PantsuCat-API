@@ -2,13 +2,15 @@
 Java API implementation for https://pantsu.cat/
 
 # Installation
-The recommended way to use this library is to add the github repository as a project in your build.sbt and let your project depend on it.
-Sbt builds the library from source and will apply all updates in the repository.
+One way to use this library is to inculude it through jitpack.
+How to use it with your build tool is explained at [their page](https://jitpack.io/#aki-ks/PantsuCat-API).
+
+If you're building with sbt, you may add this library as a remote project in your `build.sbt` and let your project depend on it.
+Sbt builds the library from source and will apply all new commits to the repository.
 ``` sbt
 lazy val pantsuCat = RootProject(uri("https://github.com/kaysubs/PantsuCat-API.git"))
 dependsOn(pantsuCat)
 ```
-Of course you may also use a different build tool that support that feature or manually compile this library and its dependencies.
 
 # Usage
 The entry point of this API is the `PantsuCatApi` interface.
